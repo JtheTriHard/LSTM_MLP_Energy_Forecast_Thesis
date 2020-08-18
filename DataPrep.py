@@ -20,7 +20,6 @@ start_time = time.time()
 # of weather datasets. Second & minute resolution is also available.
 df_TX = pd.read_csv('YOUR_DIRECTORY')
 df_CA = pd.read_csv('YOUR_DIRECTORY')
-# drop 9836 for missing a full week of data
 
 # Load hourly-resolution weather (Source: https://climate.usu.edu/)
 df_weather_TX = pd.read_csv('YOUR_DIRECTORY')
