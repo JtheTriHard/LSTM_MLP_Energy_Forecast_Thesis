@@ -15,7 +15,7 @@ print("Working Directory: ", os.getcwd())
 
 df = pd.read_csv('YOUR_DIRECTORY')
 
-# Create persistance forecast within each household ID
+# Create persistence forecast within each household ID
 df_in = df[['dataid','grid_fixed']]
 groups = df_in.groupby('dataid')
 df_in['t-1'] = pd.DataFrame(groups['grid_fixed'].shift(1))
