@@ -22,7 +22,7 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 # PREPARE DATA
 
 # Load data
-df = pd.read_csv(r'D:\Documents\EUR MiM\Thesis\Code\Data\df_elec_all.csv')
+df = pd.read_csv('YOUR_DIRECTORY')
 # Rename columns with characters not accepted by tf
 df = df.rename(columns={'building_type_Single-Family Home 001 (Master)':'building_type_Single-Family Home'})
 # Reorganize features in order expected by model, drop unused features
@@ -160,8 +160,8 @@ input_layer = tf.keras.layers.Concatenate(name="concat")(embeddings)
 output_layer = tf.keras.layers.Dense(steps_ahead,name='output_layer')(input_layer)
 model = tf.keras.Model(inputs, output_layer, name = "MLP-C-G")
 model.compile(optimizer='adam',loss='mse')
-#model.summary()
-tf.keras.utils.plot_model(model, r'D:\Documents\EUR MiM\Thesis\Code\Images\MLP-C-G.png', show_shapes=True)
+model.summary()
+tf.keras.utils.plot_model(model, 'YOUR_DIRECTORY', show_shapes=True)
 # Fit
 train_input = [x_train[:,:,0],x_train[:,:,1],x_train[:,:,2],x_train[:,:,3],
                x_train[:,:,4],x_train[:,:,5],x_train[:,:,6],x_train[:,:,7],
@@ -307,6 +307,6 @@ plot_embeddings(5,7,0)
 
 # Save model
 #if steps_ahead==1:
-#    model.save(r'D:\Documents\EUR MiM\Thesis\Code\Model Saves\MLP-C-G-1')
+#    model.save('YOUR_DIRECTORY')
 #else:
-#    model.save(r'D:\Documents\EUR MiM\Thesis\Code\Model Saves\MLP-C-G-24') 
+#    model.save('YOUR_DIRECTORY') 
