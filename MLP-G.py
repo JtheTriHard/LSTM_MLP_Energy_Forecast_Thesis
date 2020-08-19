@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler, StandardScaler,RobustScaler
 
-np.random.seed(123) # switch off for monte carlo?
+np.random.seed(123)
 tf.random.set_seed(123)
 
 # Confirm working directory
