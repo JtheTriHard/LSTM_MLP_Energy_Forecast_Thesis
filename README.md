@@ -8,9 +8,13 @@ I find that LSTMs outperform MLPs for all forecast horizons and target variables
 Some following improvements and extensions are recommended: differencing, ARIMA benchmark, automated hyperparameter tuning, automated feature extraction, more training data.
 
 DataPrep.py - The code used to clean and combine the datasets provided by Pecan Street and USU Climate Center, along with some plots for exploratory data analysis.
+
 LSTM-G.py - TensorFlow LSTM for predicting grid consumption.
+
 LSTM-S.py - TensorFlow LSTM for predicting solar PV generation.
+
 MLP-G.py - TensorFlow MLP for predicting grid consumption.
+
 MLP-S.py - TensorFlow MLP for predicting solar PV generation.
 
 Because the LSTMs were found to perform best, the prediction intervals built using Monte Carlo simulations were only done for the LSTM models, and can be found in the final section of the files.
